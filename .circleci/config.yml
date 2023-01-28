@@ -110,7 +110,7 @@ jobs:
             cd frontend
             npm install
             npm test
-      #- notify_on_failure
+      - notify_on_failure
   test-backend:
     docker:
       - image: cimg/node:13.8.0
@@ -124,7 +124,7 @@ jobs:
              cd backend
              npm install
              npm test
-      #- notify_on_failure
+      - notify_on_failure
             
   scan-frontend:
     docker:
@@ -141,7 +141,7 @@ jobs:
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
-      #- notify_on_failure
+      - notify_on_failure
 
   scan-backend:
     docker:
@@ -158,7 +158,7 @@ jobs:
              npm audit fix --force --audit-level=critical
              npm audit fix --force --audit-level=critical
              npm audit --audit-level=critical
-      #- notify_on_failure
+      - notify_on_failure
 
   deploy-infrastructure:
     docker:
